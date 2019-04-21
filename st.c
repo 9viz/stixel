@@ -1218,6 +1218,7 @@ tclearregion(int x1, int y1, int x2, int y2)
 {
 	int x, y, temp;
 	Glyph *gp;
+	ImageList *im;
 
 	if (x1 > x2)
 		temp = x1, x1 = x2, x2 = temp;
@@ -1611,6 +1612,7 @@ csihandle(void)
 {
 	char buf[40];
 	int len;
+    ImageList *im;
 
 	switch (csiescseq.mode[0]) {
 	default:
@@ -1700,6 +1702,13 @@ csihandle(void)
 		tputtab(csiescseq.arg[0]);
 		break;
 	case 'J': /* ED -- Clear screen */
+		/* purge sixels */
+		/* TODO: kinda gross, should probably make this only purge
+		 * visible sixels
+         */
+		for (im = term.images; im; im = im->next)
+			im->should_delete = 1;
+
 		switch (csiescseq.arg[0]) {
 		case 0: /* below */
 			tclearregion(term.c.x, term.c.y, term.col-1, term.c.y);

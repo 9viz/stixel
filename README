@@ -42,4 +42,4 @@ Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
 
 Original sixel patch by saitoha <https://github.com/saitoha>
 
-Changes made to add sixel support is based on <https://github.com/lopesivan/st-sixel>
+Changes made to add sixel support is based on <https://github.com/charlesdaniels/st>

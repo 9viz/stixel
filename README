@@ -28,7 +28,18 @@ the st terminfo entry with the following command:
 
 See the man page for additional details.
 
+Sixel
+-----
+
+See: https://cdn.discordapp.com/attachments/361910177961738244/569423704451448842/zq3h.png
+
+Know issues:
+st segfaults when you clear the terminal with a sixel image
+
 Credits
 -------
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
 
+Original sixel patch by saitoha <https://github.com/saitoha>
+
+Changes made to add sixel support is based on <https://github.com/lopesivan/st-sixel>
